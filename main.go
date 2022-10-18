@@ -68,10 +68,10 @@ func scrobbler() error {
 						prevTrack = trackName
 						statusData := discordgo.UpdateStatusData{
 							Game: &discordgo.Game{
-								Name:    prevTrack,
+								Name:    currentTrack.Artist.Name,
 								Type:    discordgo.GameTypeListening,
-								Details: "LAST.FM",
-								State:   "DiscordLastfmScrobbler",
+								Details: currentTrack.Name,
+								State:   "on "+curremtTrack.Album.Name
 							},
 							AFK:    false,
 							Status: "online",
